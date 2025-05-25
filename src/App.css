@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+/* Import Tailwind's base, components, and utilities */
+@import "tailwindcss";
+
+/* --- Custom Loader Animations --- */
+
+/* Blinking cursor animation */
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+/* --- Ping animation for dots --- */
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* --- End Custom Animations --- */
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+
+/* --- Tailwind v4 Configuration --- */
+
+/* Enable the 'dark' variant based on the presence of the 'dark' class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Define theme variables using @theme */
+@theme {
+  /* Your custom theme values as CSS variables */
+  --color-primary: #1e40af;  /* blue-800 */
+  --color-secondary: #db2777; /* pink-600 */
+  --color-dark: #111827;     /* gray-900 */
+  --color-light: #f3f4f6;    /* gray-100 */
+  --font-sans: "JetBrains Mono", monospace;
+
+  /* Example: Using the variables for Tailwind utilities */
+  /* Note: Tailwind v4 often infers utility names from variable names. */
+  /* --color-primary: var(--color-primary); /* maps bg-primary etc. */
+  /* --color-secondary: var(--color-secondary); */
+  /* --color-dark: var(--color-dark); */
+  /* --color-light: var(--color-light); */
+
+}
+
+/* --- Base & Custom Styles --- */
+
+/* Apply smooth scrolling and navbar offset */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem; /* Adjust based on your navbar height */
+}
+
+/* Apply base body styles using custom theme variables */
+body {
+  font-family: var(--font-sans); /* ✅ Uses custom Inter font */
+
+  /* Use the theme variables directly or Tailwind classes that use them */
+  background-color: var(--color-light); /* Light mode background */
+  color: #1f2937; /* Default text color (e.g., gray-800) */
+  font-family: var(--font-sans);
+  @apply transition-colors duration-300;
+}
+
+/* Apply dark mode styles to the body */
+.dark body { /* Or apply directly if body has dark class */
+  background-color: var(--color-dark); /* Dark mode background */
+  color: var(--color-light); /* Dark mode text color */
+}
+
+/* Optional: Add custom component base styles here */
+/* Input style example */
+.input-style {
+  @apply w-full px-4 py-2.5 border border-slate-300 dark:border-slate-600 rounded-lg shadow-sm
+    focus:ring-2 focus:ring-[var(--color-primary)] dark:focus:ring-[var(--color-secondary)]
+    focus:border-[var(--color-primary)] dark:focus:border-[var(--color-secondary)]
+    dark:bg-slate-700 dark:text-slate-100 text-sm transition duration-200 ease-in-out;
+}
+
+/* --- Scrollbar Styling (Optional) --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+   /* Use theme variables or Tailwind colors */
+  @apply bg-gray-100 dark:bg-gray-700 rounded-lg;
+}
+::-webkit-scrollbar-thumb {
+   /* Use theme variables or Tailwind colors */
+   @apply bg-gray-400 dark:bg-gray-500 rounded-lg;
+}
+::-webkit-scrollbar-thumb:hover {
+   /* Use theme variables or Tailwind colors */
+  @apply bg-gray-500 dark:bg-gray-600;
+}
+
+/* --- End Scrollbar Styling --- */
