@@ -145,7 +145,7 @@ const Hero = () => {
             <FaGithub className="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition duration-300 transform hover:scale-125" />{" "}
           </a>{" "}
           <a
-            href="https://linkedin.com/in/atharvamali"
+            href="https://www.linkedin.com/in/atharvamali3081"
             target="_blank"
             rel="noopener noreferrer"
           >
