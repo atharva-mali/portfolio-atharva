@@ -11,14 +11,21 @@ import sguLogo from "../assets/logo/sgu_logo.png"
 // --- Sample Data ---
 const experiences = [
   {
+    title: 'Junior Software Developer',
+    subtitle: 'Lexicon Networks, Pune',
+    dateRange: 'July 2025 - Present',
+    description: 'Contributing to the design, development, and optimization of integration workflows and enterprise applications using Jitterbit, Shopify Admin APIs, NetSuite APIs, GraphQL API, REST/SOAP API, and modern web technologies, focusing on Shopify–NetSuite integrations.',
+    logo: lexiconLogo, // Add the logo path here
+  },
+  {
     title: 'Software Developer Trainee',
     subtitle: 'Lexicon Networks, Pune',
-    dateRange: 'Feb 2025 - Present',
+    dateRange: 'Feb 2025 - July 2025',
     description: ' Gaining hands-on experience in Integration Development using advanced tools like Jitterbit and Celigo',
     logo: lexiconLogo, // Add the logo path here
   },
   {
-    title: 'Web Developer',
+    title: 'Web Developer Intern',
     subtitle: 'ESBI Investment Group LLC, Texas USA',
     dateRange: 'Jun 2019 - Dec 2021',
     description: "This role allow me to enhance my skills in website development, front-end and back-end programming, security analysis, and database management.",
